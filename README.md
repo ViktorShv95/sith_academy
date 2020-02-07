@@ -1,1 +1,1 @@
-# sith_academy
+# [Демо](https://sithacademy.herokuapp.com/)
