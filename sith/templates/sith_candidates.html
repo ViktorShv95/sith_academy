@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %} {{ block.super }} Список кандидатов с Вашей планеты {% endblock %}
+{% block content %}
+{% for recruit in recruits %}
+<p><a href="{% url 'recruit' recruit_id=recruit.id sith_id=sith_id %}">{{ recruit.name }}</a></p>
+{% endfor %}
+{% endblock %}

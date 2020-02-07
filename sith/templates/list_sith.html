@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} {{ block.super }} Список Ситхов {% endblock %}
+{% block content %}
+<table class="table table-borderless">
+    <thead>
+    <tr>
+        <th>Имя ситха</th>
+        <th>Планета обучения</th>
+        <th>Количество Рук Тени</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for sith in siths %}
+    <tr>
+        <td>{{ sith.name }}</td>
+        <td>{{ sith.planet }}</td>
+        <td>{{ sith.recruits_cnt }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

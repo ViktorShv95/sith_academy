@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block title %} {{ block.super }} {{ recruit }} {% endblock %}
+{% block content %}
+<h1>Имя рекрута: {{ recruit.name }}</h1>
+<h2>Возраст: {{ recruit.age }}</h2>
+<table class="table table-borderless">
+    <thead>
+    <tr>
+        <th>Вопрос</th>
+        <th>Ответ</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for answer in recruit.answer_set.all %}
+    <tr>
+        <td>{{ answer.question.text }}</td>
+        <td>{{ answer.answer|yesno:"Да,Нет" }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit">
+</form>
+{% endblock %}

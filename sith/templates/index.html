@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %} {{ block.super }} Главная {% endblock %}
+{% block content %}
+<a href="{% url 'new_recruit' %}">Для рекрутов</a>
+    <br>
+    <hr>
+<a href="{% url 'select_sith' %}">Для ситхов</a>
+{% endblock %}

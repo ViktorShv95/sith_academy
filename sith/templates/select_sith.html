@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block title %} {{ block.super }} Выбор {% endblock %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit">
+</form>
+{% endblock %}
